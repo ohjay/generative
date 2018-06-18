@@ -48,7 +48,7 @@ class Artist(object):
         b = color % 256
         g = (color // 256) % 256
         r = (color // 65536) % 256
-        self.context.set_source_rgba(r, g, b, ALPHA)
+        self.context.set_source_rgba(float(r) / 255, float(g) / 255, float(b) / 255, ALPHA)
 
         # Select location
         scale = float(self.iteration) / 256 + np.random.normal(1, self.noise)
