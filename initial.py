@@ -12,7 +12,7 @@ import numpy as np
 IMG_WIDTH = 1000
 IMG_HEIGHT = 1000
 ALPHA = 1.0
-NUM_STEPS = 5000
+NUM_STEPS = 9500
 EPS = 1e-9
 PROPORTION_NEW = 0.05
 INIT_X = 0.5
@@ -44,7 +44,7 @@ class Artist(object):
         self.context = context
 
     def step(self):
-        color = (self.iteration * 9) % 16777216  # hex representation as an integer
+        color = self.iteration % 16777216  # hex representation as an integer
         b = color % 256
         g = (color // 256) % 256
         r = (color // 65536) % 256
